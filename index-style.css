@@ -1,0 +1,205 @@
+body {
+    display: flex;
+    background-color: #262626;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    font-family: 'Sofia Pro Black';
+    min-height: 700px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.intro {
+    position: absolute;
+    background-color: #000000B3;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    animation: intro-fade-out 2.5s 1;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(6px);
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.header {
+    font-size: 32px;
+    justify-content: center;
+    background-color: #1B1B1B; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.lock-animation {
+    margin-top: 0px auto;
+    position: relative;
+    align-items: center;
+    background-image: url("res/lockTop.png");
+    width: 260px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.4s;
+}
+
+.lock-base {
+    background-image: url("res/lockBase.png");
+    width:260px;
+    height:166px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+input {
+    background-color: #472D04;
+    resize: none;
+    width: 45px;
+    height: 45px;
+    font-size:40px;
+    text-align: center;
+    border-radius: 5px;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    margin: 5px;
+    box-shadow: 0px 5px #00000057;
+}
+
+::placeholder{
+    color: white;
+    opacity: 0.2;
+}
+
+.hint-wrapper {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    width: 500px;
+    max-width: 100vw;
+}
+
+.hint {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 22px;
+    align-items: center;
+}
+
+.hint-top {
+    width: fit-content;
+    font-size: 24px;
+    background: #1B1B1B;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+
+.hint-text {
+    font-size: 11px;
+}
+    
+
+.continue-button {
+    width:200px;
+    background-color: #9FC805;
+    border-radius: 5px;
+    height:40px;
+    color:white;
+    font-family:inherit;
+    border:none;
+    font-size: 20px;
+    box-shadow: 0px 5px #718E04;
+    text-shadow: 0px 2px 2px #718E04;
+    opacity: 0;
+    position: relative;
+    bottom: 0;
+    transition: 0.2s;
+}
+
+.continue-button:hover {
+    cursor:pointer;
+    bottom: -5px;
+    box-shadow: 0px 0px #718E04;
+}
+
+.footer {
+    width: fit-content;
+    bottom: -5px;
+    display:flex;
+    margin-top: 20px;
+    color:gray;
+    font-size:12px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+
+/*Mobile Version*/
+@media only screen and (max-width: 600px) {
+    body {
+      min-height: 880px;
+    }
+  }
+
+
+/*Hide Input Spinner Buttons*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/*For Firefox*/
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+@font-face {
+    font-family: "Sofia Pro Black";
+     src: url("res/sofiaProBlack.otf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+     src: url("res/montserrat.ttf");
+}
+
+.bounce-in {
+    animation: bounce-in 1.2s 1;
+}
+
+@keyframes intro-fade-out {
+    0%{opacity: 1;}
+    70%{opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes bounce-in {
+    0% {
+      opacity: 0;
+      transform: scale(.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% { transform: scale(.9); }
+    100% { transform: scale(1); }
+}

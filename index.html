@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crack The Code</title>
+    <link rel="stylesheet" href="index-style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="res/favicon.png">
+    <script type="text/javascript" src="generateNew.js"></script>
+    <script type="text/javascript" src="interactions.js"></script>
+</head>
+
+
+
+
+<body onload="generateNew()">
+    <!--Intro-->
+    <div id="intro" class="intro">
+        <h1>CRACK THE CODE</h1>
+        <span>By David Heckhoff</span>
+    </div>
+
+    <!--Header-->
+    <div class="header">
+        <span id="headerLabel">CAN YOU CRACK THE CODE?</span>
+    </div>
+
+
+    <!--Lock-->
+    <div class="lock-animation" id="lockAnimation">
+        <div class="lock-base">
+            <!--Enter Code-->
+            <input type="number" id="guess1" autofocus="autofocus" oninput="onCodeInput(1)" onkeydown="return event.keyCode !== 69" placeholder="0">
+            <input type="number" id="guess2" autofocus="autofocus" oninput="onCodeInput(2)" onkeydown="return event.keyCode !== 69" placeholder="0">
+            <input type="number" id="guess3" autofocus="autofocus" oninput="onCodeInput(3)" onkeydown="return event.keyCode !== 69" placeholder="0">
+        </div>
+    </div>
+
+    <!--Hints-->
+    <div class="hint-wrapper">
+        <section class="hint">
+            <section class="hint-top">
+                <span id="hint1">0 0 0</span>
+            </section>
+            <span class="hint-text" style="color: #4CAF50">2 CORRECT BUT<br />WRONG PLACED</span>
+        </section>
+
+        <section class="hint">
+            <section class="hint-top">
+                <span id="hint2">0 0 0</span>
+            </section>
+            <span class="hint-text" style="color: #CCDB39">1  CORRECT AND<br />WELL PLACED</span>
+        </section>
+
+        <section class="hint">
+            <section class="hint-top">
+                <span id="hint3">0 0 0</span>
+            </section>
+            <span class="hint-text" style="color: #FEC007">1 CORRECT BUT<br />WRONG PLACED</span>
+        </section>
+
+        <section class="hint">
+            <section class="hint-top">
+                <span id="hint4">0 0 0</span>
+            </section>
+            <span class="hint-text" style="color: #FEC007">1 CORRECT BUT<br />WRONG PLACED</span>
+        </section>
+
+        <section class="hint">
+            <section class="hint-top">
+                <span id="hint5">0 0 0</span>
+            </section>
+            <span class="hint-text" style="color: #F44336">NOTHING IS<br />CORRECT</span>
+        </section>
+    </div>
+
+    <!--Continue Button-->
+    <button onclick="generateNew()" id="continueButton" class="continue-button">Continue</button>
+    
+    <!--Footer-->
+    <footer class="footer">
+        <span id="answerLabel" onclick="revealAnswer()">Reveal Answer</section>
+    </footer>
+
+
+</body>
+</html>
